@@ -81,5 +81,9 @@ sudo tar zen-7.x-5.4.tar.gz
 sudo cp -r zen/STARTERKIT .
 sudo mv STARTERKIT pilgrim
 sudo mv pilgrim/STARTKIT.info.txt pilgrim/pilgrim.info
-sudo sed -i  's/Zen Sub-theme Starter Kit/Pilgrim' pilgrim.info
+cd pilgrim
+sudo sed -i 's/Zen Sub-theme Starter Kit/Pilgrim' pilgrim.info
+sudo sed -i 's/   /A colorful theme' pilgrim.info
+sudo sed -i 's/STARTERKIT/pilgrim' template.php
+sudo sed -i 's/STARTERKIT/pilgrim' theme-settings.php
 
