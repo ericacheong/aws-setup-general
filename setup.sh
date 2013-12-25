@@ -52,7 +52,7 @@ sudo wget http://ftp.drupal.org/files/projects/i18n-7.x-1.10.tar.gz
 sudo tar zxvf i18n-7.x-1.10.tar.gz
 
 sudo wget http://ftp.drupal.org/files/projects/ctools-7.x-1.3.tar.gz
-sudo tar ctools-7.x-1.3.tar.gz
+sudo tar zxvf ctools-7.x-1.3.tar.gz
 
 sudo wget http://ftp.drupal.org/files/projects/admin_menu-7.x-3.0-rc4.tar.gz
 sudo tar zxvf admin_menu-7.x-3.0-rc4.tar.gz
@@ -61,7 +61,7 @@ sudo wget http://ftp.drupal.org/files/projects/webform-7.x-3.19.tar.gz
 sudo tar zxvf webform-7.x-3.19.tar.gz
 
 sudo wget http://ftp.drupal.org/files/projects/wysiwyg-7.x-2.2.tar.gz
-sudo tar wysiwyg-7.x-2.2.tar.gz
+sudo tar zxvf wysiwyg-7.x-2.2.tar.gz
 
 sudo wget http://ftp.drupal.org/files/projects/google_analytics-7.x-1.4.tar.gz
 sudo tar zxvf google_analytics-7.x-1.4.tar.gz
@@ -75,15 +75,15 @@ cd ../themes
 
 # Download zen framework
 sudo wget http://ftp.drupal.org/files/projects/zen-7.x-5.4.tar.gz
-sudo tar zen-7.x-5.4.tar.gz
+sudo tar zxvf zen-7.x-5.4.tar.gz
 
-# Create subtheme
+# Create and update subtheme
 sudo cp -r zen/STARTERKIT .
 sudo mv STARTERKIT pilgrim
-sudo mv pilgrim/STARTKIT.info.txt pilgrim/pilgrim.info
+sudo mv pilgrim/STARTERKIT.info.txt pilgrim/pilgrim.info
 cd pilgrim
-sudo sed -i 's/Zen Sub-theme Starter Kit/Pilgrim' pilgrim.info
-sudo sed -i 's/   /A colorful theme' pilgrim.info
-sudo sed -i 's/STARTERKIT/pilgrim' template.php
-sudo sed -i 's/STARTERKIT/pilgrim' theme-settings.php
+sudo sed -i -e 's/Zen Sub-theme Starter Kit/Pilgrim/' pilgrim.info
+sudo sed -i '/description = /c\description = Pilgrim theme' pilgrim.info 
+sudo sed -i 's/STARTERKIT/pilgrim/' template.php
+sudo sed -i 's/STARTERKIT/pilgrim/' theme-settings.php
 
