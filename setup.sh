@@ -86,4 +86,8 @@ sudo sed -i -e 's/Zen Sub-theme Starter Kit/Pilgrim/' pilgrim.info
 sudo sed -i '/description = /c\description = Pilgrim theme' pilgrim.info 
 sudo sed -i 's/STARTERKIT/pilgrim/' template.php
 sudo sed -i 's/STARTERKIT/pilgrim/' theme-settings.php
+sudo echo "Zen sub-theme Pilgrim installed."
 
+# Set up complete
+sudo echo "Set up completed!"
+sudo echo "You can now create MySQL database and set up Drupal."
