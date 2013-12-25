@@ -21,6 +21,7 @@ sudo service apache2 restart
 # Install mysql
 sudo apt-get install -y mysql-server libapache2-mod-auth-mysql php5-mysql
 
+:'
 # Download Drupal v7.
 cd /var/www
 sudo wget http://ftp.drupal.org/files/projects/drupal-7.24.tar.gz
@@ -85,12 +86,9 @@ sudo cp -r zen/STARTERKIT .
 sudo mv STARTERKIT pilgrim
 sudo mv pilgrim/STARTERKIT.info.txt pilgrim/pilgrim.info
 cd pilgrim
-sudo sed -i -e 's/Zen Sub-theme Starter Kit/Pilgrim/' pilgrim.info
-sudo sed -i '/description = /c\description = Pilgrim theme' pilgrim.info 
-sudo sed -i 's/STARTERKIT/pilgrim/' template.php
-sudo sed -i 's/STARTERKIT/pilgrim/' theme-settings.php
 sudo echo "Zen sub-theme Pilgrim installed."
 
 # Set up complete
 sudo echo "Set up completed!"
 sudo echo "You can now create MySQL database and set up Drupal."
+'
