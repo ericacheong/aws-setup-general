@@ -2,28 +2,26 @@
 # Simple setup.sh for configuring Ubuntu 12.04 LTS EC2 instance
 # for headless setup.
 
-# install git
+# Install git
 sudo apt-get install -y git
 sudo apt-get install -y curl
 
 sudo apt-get update 
 sudo apt-get -y upgrade
 
-# install apache
+# Install apache
 
 sudo apt-get install -y apache2
 
+# Install php
+sudo apt-get install -y libapache2-mod-php5 php5-gd
+
 sudo service apache2 restart
-
-
-
-# install php
-sudo apt-get install -y libapache2-mod-php5
 
 # sudo a2enmod php5
 
 
-# install mysql
+# Install mysql
 sudo apt-get install -y mysql-server libapache2-mod-auth-mysql php5-mysql
 
 # Download Drupal v7.
@@ -31,6 +29,14 @@ cd /var/www
 sudo wget http://ftp.drupal.org/files/projects/drupal-7.24.tar.gz
 sudo tar zxvf drupal-7.24.tar.gz
 sudo mv drupal-7.24 d7
+
+# Set up file system
+sudo mkdir /var/www/d7/sites/default/files
+sudo chmod 777 files
+
+# Copy settings.php
+sudo cp /var/www/d7/sites/default/default.settings.php /var/www/d7/sites/default/settings.php
+sudo chmod a+w /var/www/d7/sites/default/settings.php 
 
 # Install modules
 cd d7/sites/all/modules
