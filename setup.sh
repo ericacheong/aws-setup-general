@@ -18,9 +18,6 @@ sudo apt-get install -y libapache2-mod-php5 php5-gd
 
 sudo service apache2 restart
 
-# sudo a2enmod php5
-
-
 # Install mysql
 sudo apt-get install -y mysql-server libapache2-mod-auth-mysql php5-mysql
 
