@@ -4,11 +4,11 @@ The purpose of this file is to set up AWS EC2 environment with latest LAMP softw
 installation.
 
 This setup file will install the follow software:
-	* Apache2
-	* PHP5
-	* MySQL
-	* phpMyAdmin
-	* zip, unzip
+* Apache2
+* PHP5
+* MySQL
+* phpMyAdmin
+* zip, unzip
 
 and update the server to latest Ubuntu channels and software. 
 
